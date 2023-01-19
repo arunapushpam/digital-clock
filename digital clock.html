@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+	<style>
+	*
+{
+margin:0;
+padding:0;
+box-sizing:border-box;	
+}
+body{
+	
+  background: linear-gradient(45deg, red, blue);
+	color: rgb(128, 80, 200);
+   align-items:center;
+   justify-content:center;
+   display:flex;
+    height:100vh;
+   width:100%;
+   <!-- background-color:gray; -->
+
+}
+div{
+   padding:2rem;
+      border-radius:15%;
+   background-color:aqua;
+   border:7px solid orange;
+ 
+}
+</style>
+<body>
+    <div> 
+		<h1 id="time"></h1>
+	</div>
+<script>
+   function time(){
+	var date=new Date();
+	var hover=date.getHours();
+	var minute=date.getMinutes();
+	var second=date.getSeconds();
+	var session="Am";
+  
+	hover=(hover<10)?"0"+hover:hover;
+	minute=(minute<10)?"0"+minute:minute;
+	second=(second<10)?"0"+second:second;
+	
+	if(hover==0){
+	   hover==12;
+	}
+	if(hover>=12){
+	  hover=hover-12;
+	  session="Pm"
+	}
+	var clock=hover+":" +""+minute+":" +""+second+"-"+session;
+	document.getElementById("time").innerText=clock;
+	setTimeout(time,1000)
+	}
+	time();
+</script>
+<script>
+</script>
+
+</body>
+</html>
