@@ -44,10 +44,6 @@ div{
 	var minute=date.getMinutes();
 	var second=date.getSeconds();
 	var session="Am";
-  
-	hover=(hover<10)?"0"+hover:hover;
-	minute=(minute<10)?"0"+minute:minute;
-	second=(second<10)?"0"+second:second;
 	
 	if(hover==0){
 	   hover==12;
@@ -56,6 +52,12 @@ div{
 	  hover=hover-12;
 	  session="Pm"
 	}
+	
+	hover=(hover<10)?"0"+hover:hover;
+	minute=(minute<10)?"0"+minute:minute;
+	second=(second<10)?"0"+second:second;
+	
+	
 	var clock=hover+":" +""+minute+":" +""+second+"-"+session;
 	document.getElementById("time").innerText=clock;
 	setTimeout(time,1000)
